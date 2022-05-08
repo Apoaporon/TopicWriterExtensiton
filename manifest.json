@@ -1,0 +1,26 @@
+{
+  "name": "Topic Writer ログ拡張ツール",
+  "version": "0.0.1",
+  "description": "Topic Writerで研究を継続するために必要なログを集める拡張機能です",
+  "manifest_version": 3,
+  "permissions": [
+    "background",
+    "tabs",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://topic-writer.appspot.com/*","https://topic-writer-dev.appspot.com/*"],
+      "js": [
+        "/content/content.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+
+    }
+  ],
+  "background": {
+    "service_worker": "/event/event.js"
+  }
+
+}
